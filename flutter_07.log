@@ -1,0 +1,83 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --quiet assemble --depfile E:\New Folder\fluuter\firstapp\build\app\intermediates\flutter\release/flutter_build.d --output E:\New Folder\fluuter\firstapp\build\app\intermediates\flutter\release -dTargetFile=lib\main.dart -dTargetPlatform=android -dBuildMode=release -dTrackWidgetCreation=true -dTreeShakeIcons=true android_aot_bundle_release_android-arm android_aot_bundle_release_android-arm64 android_aot_bundle_release_android-x64
+
+## exception
+
+ArgumentError: Invalid argument(s): Cannot find executable for C:\flutter\bin\cache\artifacts\engine\android-x64-release\windows-x64\gen_snapshot.
+
+```
+#0      _getExecutable (package:process/src/interface/local_process_manager.dart:127:5)
+#1      LocalProcessManager.start (package:process/src/interface/local_process_manager.dart:43:30)
+#2      _DefaultProcessUtils.start (package:flutter_tools/src/base/process.dart:466:28)
+#3      _DefaultProcessUtils.stream (package:flutter_tools/src/base/process.dart:484:35)
+#4      GenSnapshot.run (package:flutter_tools/src/base/build.dart:74:26)
+#5      AOTSnapshotter.build (package:flutter_tools/src/base/build.dart:198:56)
+#6      AndroidAot.build (package:flutter_tools/src/build_system/targets/android.dart:235:52)
+#7      _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:795:27)
+<asynchronous suspension>
+#8      _BuildInstance.invokeTarget.<anonymous closure> (package:flutter_tools/src/build_system/build_system.dart:738:35)
+#9      new Future.sync (dart:async/future.dart:223:31)
+#10     AsyncMemoizer.runOnce (package:async/src/async_memoizer.dart:43:45)
+#11     _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:738:21)
+<asynchronous suspension>
+<asynchronous suspension>
+#12     MappedListIterable.elementAt (dart:_internal/iterable.dart:417:31)
+#13     ListIterator.moveNext (dart:_internal/iterable.dart:343:26)
+#14     Future.wait (dart:async/future.dart:402:26)
+#15     _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:733:45)
+#16     FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:560:36)
+#17     AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:221:58)
+#18     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:860:18)
+#19     _rootRunUnary (dart:async/zone.dart:1198:47)
+#20     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#21     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#22     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#23     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#24     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#25     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:567:7)
+#26     _rootRun (dart:async/zone.dart:1190:13)
+#27     _CustomZone.run (dart:async/zone.dart:1093:19)
+#28     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#29     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#30     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#31     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#32     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#33     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 1.20.4, on Microsoft Windows [Version 10.0.17763.1457], locale en-IN)
+    • Flutter version 1.20.4 at C:\flutter
+    • Framework revision fba99f6cf9 (3 weeks ago), 2020-09-14 15:32:52 -0700
+    • Engine revision d1bc06f032
+    • Dart version 2.9.2
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.0)
+    • Android SDK at C:\Users\subik\AppData\Local\Android\Sdk
+    • Platform android-29, build-tools 29.0.0
+    • ANDROID_HOME = C:\Users\subik\AppData\Local\Android\Sdk
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
+    • All Android licenses accepted.
+
+[✓] Android Studio (version 3.2)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 31.3.1
+    • Dart plugin version 181.5656
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)
+
+[✓] VS Code (version 1.49.3)
+    • VS Code at C:\Users\subik\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.15.0
+
+[!] Connected device
+    ! No devices available
+
+! Doctor found issues in 1 category.
+```
